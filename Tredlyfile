@@ -116,12 +116,8 @@ customDNS=
 fileFolderMapping=/partition/ssl /usr/local/etc/nginx/ssl
 
 installPackage=nginx
-installPackage=vim-lite
 
 fileFolderMapping= /nginx/nginx.conf /usr/local/etc/nginx/
-fileFolderMapping= /nginx/server_name /usr/local/etc/nginx/
-fileFolderMapping= /nginx/sslconfig /usr/local/etc/nginx/
-fileFolderMapping= /nginx/upstream /usr/local/etc/nginx/
 
 ############################################
 ## ON CONTAINER STOP COMMANDS
