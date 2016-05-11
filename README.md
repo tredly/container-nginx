@@ -8,7 +8,7 @@ Requires Tredly 1.0.0 <https://github.com/tredly/tredly> or later
 
 ### Modifying container options
 
-By default, the container name is "wordpress". Change this by changing containerName in `tredly.yaml` prior to building this container.
+By default, the container name is "nginx". Change this by changing containerName in `tredly.yaml` prior to building this container.
 
 Many other options can be changed in `tredly.yaml`
 
