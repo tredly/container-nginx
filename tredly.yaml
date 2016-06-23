@@ -1,0 +1,53 @@
+---
+  container:
+    compatibleWith: "1.0.0"
+    firewall:
+      ipv4Whitelist: []
+      allowPorts:
+        udp:
+          in: []
+          out:
+            - 53
+        tcp:
+          in:
+            - 80
+            - 443
+          out:
+            - 80
+            - 443
+    customDNS: []
+    resourceLimits:
+      maxHdd: "unlimited"
+      maxRam: "unlimited"
+      maxCpu: "unlimited"
+    proxy:
+      layer4Proxy: false
+      ## **** CHANGE ME **** ##
+      ## These need to be updated based on your actual URL
+      layer7Proxy:
+        -
+          maxFileSize: "10m"
+          redirects: []
+          cert: "star.{{ENV}}.example.com"
+          enableWebsocket: false
+          url: "www.{{ENV}}.example.com/blah"
+    replicate: false
+    technicalOptions: {}
+    startOrder: 1
+    operations:
+      onStop: []
+      onCreate:
+        -
+          source: "/partition/ssl"
+          type: "fileFolderMapping"
+          target: "/usr/local/etc/nginx/ssl"
+        -
+          value: "nginx"
+          type: "installPackage"
+        -
+          source: "/nginx/nginx.conf"
+          type: "fileFolderMapping"
+          target: "/usr/local/etc/nginx/"
+    name: "nginx"
+    buildOptions:
+      publish: false
