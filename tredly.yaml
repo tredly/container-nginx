@@ -28,9 +28,9 @@
         -
           maxFileSize: "10m"
           redirects: []
-          cert: "star.{{ENV}}.example.com"
+          cert: "star.example.com"
           enableWebsocket: false
-          url: "www.{{ENV}}.example.com/blah"
+          url: "www.example.com/blah"
     replicate: false
     technicalOptions: {}
     startOrder: 1
